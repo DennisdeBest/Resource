@@ -17,12 +17,12 @@ use PhpSpec\ObjectBehavior;
 
 final class ExistingResourceExceptionSpec extends ObjectBehavior
 {
-    function it_extends_exception(): void
+    function it_extends_exception()
     {
         $this->shouldHaveType(\Exception::class);
     }
 
-    function it_has_a_message(): void
+    function it_has_a_message()
     {
         $this->getMessage()->shouldReturn('Given resource already exists in the repository.');
     }

@@ -59,7 +59,7 @@ trait TranslatableTrait
      *
      * @return TranslationInterface
      */
-    public function getTranslation(?string $locale = null): TranslationInterface
+    public function getTranslation(?string $locale = null)
     {
         $locale = $locale ?: $this->currentLocale;
         if (null === $locale) {
@@ -103,7 +103,7 @@ trait TranslatableTrait
     /**
      * @return Collection|TranslationInterface[]
      */
-    public function getTranslations(): Collection
+    public function getTranslations()
     {
         return $this->translations;
     }
@@ -113,7 +113,7 @@ trait TranslatableTrait
      *
      * @return bool
      */
-    public function hasTranslation(TranslationInterface $translation): bool
+    public function hasTranslation(TranslationInterface $translation)
     {
         return isset($this->translationsCache[$translation->getLocale()]) || $this->translations->containsKey($translation->getLocale());
     }
@@ -121,7 +121,7 @@ trait TranslatableTrait
     /**
      * @param TranslationInterface $translation
      */
-    public function addTranslation(TranslationInterface $translation): void
+    public function addTranslation(TranslationInterface $translation)
     {
         if (!$this->hasTranslation($translation)) {
             $this->translationsCache[$translation->getLocale()] = $translation;
@@ -134,7 +134,7 @@ trait TranslatableTrait
     /**
      * @param TranslationInterface $translation
      */
-    public function removeTranslation(TranslationInterface $translation): void
+    public function removeTranslation(TranslationInterface $translation)
     {
         if ($this->translations->removeElement($translation)) {
             unset($this->translationsCache[$translation->getLocale()]);
@@ -146,7 +146,7 @@ trait TranslatableTrait
     /**
      * @param string $currentLocale
      */
-    public function setCurrentLocale(string $currentLocale): void
+    public function setCurrentLocale(string $currentLocale)
     {
         $this->currentLocale = $currentLocale;
     }
@@ -154,7 +154,7 @@ trait TranslatableTrait
     /**
      * @param string $fallbackLocale
      */
-    public function setFallbackLocale(string $fallbackLocale): void
+    public function setFallbackLocale(string $fallbackLocale)
     {
         $this->fallbackLocale = $fallbackLocale;
     }
@@ -164,5 +164,5 @@ trait TranslatableTrait
      *
      * @return TranslationInterface
      */
-    abstract protected function createTranslation(): TranslationInterface;
+    abstract protected function createTranslation();
 }

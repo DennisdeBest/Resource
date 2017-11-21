@@ -48,7 +48,7 @@ class DeleteHandlingException extends \Exception
     /**
      * @return string
      */
-    public function getFlash(): string
+    public function getFlash()
     {
         return $this->flash;
     }
@@ -56,7 +56,7 @@ class DeleteHandlingException extends \Exception
     /**
      * @return int
      */
-    public function getApiResponseCode(): int
+    public function getApiResponseCode()
     {
         return $this->apiResponseCode;
     }

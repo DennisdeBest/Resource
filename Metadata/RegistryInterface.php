@@ -21,7 +21,7 @@ interface RegistryInterface
     /**
      * @return iterable|MetadataInterface[]
      */
-    public function getAll(): iterable;
+    public function getAll();
 
     /**
      * @param string $alias
@@ -30,7 +30,7 @@ interface RegistryInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function get(string $alias): MetadataInterface;
+    public function get(string $alias);
 
     /**
      * @param string $className
@@ -39,16 +39,16 @@ interface RegistryInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function getByClass(string $className): MetadataInterface;
+    public function getByClass(string $className);
 
     /**
      * @param MetadataInterface $metadata
      */
-    public function add(MetadataInterface $metadata): void;
+    public function add(MetadataInterface $metadata);
 
     /**
      * @param string $alias
      * @param array $configuration
      */
-    public function addFromAliasAndConfiguration(string $alias, array $configuration): void;
+    public function addFromAliasAndConfiguration(string $alias, array $configuration);
 }

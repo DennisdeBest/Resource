@@ -17,22 +17,22 @@ use PhpSpec\ObjectBehavior;
 
 final class DeleteHandlingExceptionSpec extends ObjectBehavior
 {
-    function it_extends_an_exception(): void
+    function it_extends_an_exception()
     {
         $this->shouldHaveType(\Exception::class);
     }
 
-    function it_has_a_message(): void
+    function it_has_a_message()
     {
         $this->getMessage()->shouldReturn('Ups, something went wrong during deleting a resource, please try again.');
     }
 
-    function it_has_a_flash(): void
+    function it_has_a_flash()
     {
         $this->getFlash()->shouldReturn('something_went_wrong_error');
     }
 
-    function it_has_an_api_response_code(): void
+    function it_has_an_api_response_code()
     {
         $this->getApiResponseCode()->shouldReturn(500);
     }

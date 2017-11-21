@@ -18,10 +18,10 @@ interface TranslationLocaleProviderInterface
     /**
      * @return string[]
      */
-    public function getDefinedLocalesCodes(): array;
+    public function getDefinedLocalesCodes();
 
     /**
      * @return string
      */
-    public function getDefaultLocaleCode(): string;
+    public function getDefaultLocaleCode();
 }

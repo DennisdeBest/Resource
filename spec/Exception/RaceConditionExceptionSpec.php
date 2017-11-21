@@ -18,22 +18,22 @@ use Sylius\Component\Resource\Exception\UpdateHandlingException;
 
 final class RaceConditionExceptionSpec extends ObjectBehavior
 {
-    function it_extends_an_update_handling_exception(): void
+    function it_extends_an_update_handling_exception()
     {
         $this->shouldHaveType(UpdateHandlingException::class);
     }
 
-    function it_has_a_message(): void
+    function it_has_a_message()
     {
         $this->getMessage()->shouldReturn('Operated entity was previously modified.');
     }
 
-    function it_has_a_flash(): void
+    function it_has_a_flash()
     {
         $this->getFlash()->shouldReturn('race_condition_error');
     }
 
-    function it_has_an_api_response_code(): void
+    function it_has_an_api_response_code()
     {
         $this->getApiResponseCode()->shouldReturn(409);
     }

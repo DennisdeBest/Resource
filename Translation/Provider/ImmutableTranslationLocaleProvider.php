@@ -38,7 +38,7 @@ final class ImmutableTranslationLocaleProvider implements TranslationLocaleProvi
     /**
      * {@inheritdoc}
      */
-    public function getDefinedLocalesCodes(): array
+    public function getDefinedLocalesCodes()
     {
         return $this->definedLocalesCodes;
     }
@@ -46,7 +46,7 @@ final class ImmutableTranslationLocaleProvider implements TranslationLocaleProvi
     /**
      * {@inheritdoc}
      */
-    public function getDefaultLocaleCode(): string
+    public function getDefaultLocaleCode()
     {
         return $this->defaultLocaleCode;
     }

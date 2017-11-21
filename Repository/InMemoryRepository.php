@@ -63,7 +63,7 @@ class InMemoryRepository implements RepositoryInterface
      * @throws ExistingResourceException
      * @throws UnexpectedTypeException
      */
-    public function add(ResourceInterface $resource): void
+    public function add(ResourceInterface $resource)
     {
         if (!$resource instanceof $this->interface) {
             throw new UnexpectedTypeException($resource, $this->interface);
@@ -79,7 +79,7 @@ class InMemoryRepository implements RepositoryInterface
     /**
      * {@inheritdoc}
      */
-    public function remove(ResourceInterface $resource): void
+    public function remove(ResourceInterface $resource)
     {
         $newResources = array_filter($this->findAll(), function ($object) use ($resource) {
             return $object !== $resource;
@@ -101,7 +101,7 @@ class InMemoryRepository implements RepositoryInterface
     /**
      * {@inheritdoc}
      */
-    public function findAll(): array
+    public function findAll()
     {
         return $this->arrayObject->getArrayCopy();
     }
@@ -109,7 +109,7 @@ class InMemoryRepository implements RepositoryInterface
     /**
      * {@inheritdoc}
      */
-    public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null): array
+    public function findBy(array $criteria, ?array $orderBy = null, $limit = null, $offset = null)
     {
         $results = $this->findAll();
 
@@ -131,7 +131,7 @@ class InMemoryRepository implements RepositoryInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function findOneBy(array $criteria): ?ResourceInterface
+    public function findOneBy(array $criteria)
     {
         if (empty($criteria)) {
             throw new \InvalidArgumentException('The criteria array needs to be set.');
@@ -149,7 +149,7 @@ class InMemoryRepository implements RepositoryInterface
     /**
      * {@inheritdoc}
      */
-    public function getClassName(): string
+    public function getClassName()
     {
         return $this->interface;
     }
@@ -157,7 +157,7 @@ class InMemoryRepository implements RepositoryInterface
     /**
      * {@inheritdoc}
      */
-    public function createPaginator(array $criteria = [], array $sorting = []): iterable
+    public function createPaginator(array $criteria = [], array $sorting = [])
     {
         $resources = $this->findAll();
 
@@ -178,7 +178,7 @@ class InMemoryRepository implements RepositoryInterface
      *
      * @return ResourceInterface[]|array
      */
-    private function applyCriteria(array $resources, array $criteria): array
+    private function applyCriteria(array $resources, array $criteria)
     {
         foreach ($this->arrayObject as $object) {
             foreach ($criteria as $criterion => $value) {
@@ -198,7 +198,7 @@ class InMemoryRepository implements RepositoryInterface
      *
      * @return ResourceInterface[]
      */
-    private function applyOrder(array $resources, array $orderBy): array
+    private function applyOrder(array $resources, array $orderBy)
     {
         $results = $resources;
 

@@ -18,37 +18,37 @@ interface MetadataInterface
     /**
      * @return string
      */
-    public function getAlias(): string;
+    public function getAlias();
 
     /**
      * @return string
      */
-    public function getApplicationName(): string;
+    public function getApplicationName();
 
     /**
      * @return string
      */
-    public function getName(): string;
+    public function getName();
 
     /**
      * @return string
      */
-    public function getHumanizedName(): string;
+    public function getHumanizedName();
 
     /**
      * @return string
      */
-    public function getPluralName(): string;
+    public function getPluralName();
 
     /**
      * @return string
      */
-    public function getDriver(): string;
+    public function getDriver();
 
     /**
      * @return ?string
      */
-    public function getTemplatesNamespace(): ?string;
+    public function getTemplatesNamespace();
 
     /**
      * @param string $name
@@ -64,14 +64,14 @@ interface MetadataInterface
      *
      * @return array
      */
-    public function getParameters(): array;
+    public function getParameters();
 
     /**
      * @param string $name
      *
      * @return bool
      */
-    public function hasParameter(string $name): bool;
+    public function hasParameter(string $name);
 
     /**
      * @param string $name
@@ -80,26 +80,26 @@ interface MetadataInterface
      *
      * @throws \InvalidArgumentException
      */
-    public function getClass(string $name): string;
+    public function getClass(string $name);
 
     /**
      * @param string $name
      *
      * @return bool
      */
-    public function hasClass(string $name): bool;
+    public function hasClass(string $name);
 
     /**
      * @param string $serviceName
      *
      * @return string
      */
-    public function getServiceId(string $serviceName): string;
+    public function getServiceId(string $serviceName);
 
     /**
      * @param string $permissionName
      *
      * @return string
      */
-    public function getPermissionCode(string $permissionName): string;
+    public function getPermissionCode(string $permissionName);
 }

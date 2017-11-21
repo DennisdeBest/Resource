@@ -20,5 +20,5 @@ interface TranslatableEntityLocaleAssignerInterface
     /**
      * @param TranslatableInterface $translatableEntity
      */
-    public function assignLocale(TranslatableInterface $translatableEntity): void;
+    public function assignLocale(TranslatableInterface $translatableEntity);
 }

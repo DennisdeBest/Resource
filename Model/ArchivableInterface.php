@@ -18,10 +18,10 @@ interface ArchivableInterface
     /**
      * @return \DateTimeInterface|null
      */
-    public function getArchivedAt(): ?\DateTimeInterface;
+    public function getArchivedAt();
 
     /**
      * @param \DateTimeInterface|null $archivedAt
      */
-    public function setArchivedAt(?\DateTimeInterface $archivedAt): void;
+    public function setArchivedAt(?\DateTimeInterface $archivedAt);
 }

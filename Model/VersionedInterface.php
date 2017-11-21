@@ -18,10 +18,10 @@ interface VersionedInterface
     /**
      * @return int|null
      */
-    public function getVersion(): ?int;
+    public function getVersion();
 
     /**
      * @param int|null $version
      */
-    public function setVersion(?int $version): void;
+    public function setVersion(?int $version);
 }

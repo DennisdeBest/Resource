@@ -20,7 +20,7 @@ final class StateMachine extends BaseStateMachine implements StateMachineInterfa
     /**
      * {@inheritdoc}
      */
-    public function getTransitionFromState(string $fromState): ?string
+    public function getTransitionFromState(string $fromState)
     {
         foreach ($this->getPossibleTransitions() as $transition) {
             $config = $this->config['transitions'][$transition];
@@ -35,7 +35,7 @@ final class StateMachine extends BaseStateMachine implements StateMachineInterfa
     /**
      * {@inheritdoc}
      */
-    public function getTransitionToState(string $toState): ?string
+    public function getTransitionToState(string $toState)
     {
         foreach ($this->getPossibleTransitions() as $transition) {
             $config = $this->config['transitions'][$transition];

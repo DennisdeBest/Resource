@@ -20,39 +20,39 @@ interface TranslatableInterface
     /**
      * @return Collection|TranslationInterface[]
      */
-    public function getTranslations(): Collection;
+    public function getTranslations();
 
     /**
      * @param string|null $locale
      *
      * @return TranslationInterface
      */
-    public function getTranslation(?string $locale = null): TranslationInterface;
+    public function getTranslation(?string $locale = null);
 
     /**
      * @param TranslationInterface $translation
      *
      * @return bool
      */
-    public function hasTranslation(TranslationInterface $translation): bool;
+    public function hasTranslation(TranslationInterface $translation);
 
     /**
      * @param TranslationInterface $translation
      */
-    public function addTranslation(TranslationInterface $translation): void;
+    public function addTranslation(TranslationInterface $translation);
 
     /**
      * @param TranslationInterface $translation
      */
-    public function removeTranslation(TranslationInterface $translation): void;
+    public function removeTranslation(TranslationInterface $translation);
 
     /**
      * @param string $locale
      */
-    public function setCurrentLocale(string $locale): void;
+    public function setCurrentLocale(string $locale);
 
     /**
      * @param string $locale
      */
-    public function setFallbackLocale(string $locale): void;
+    public function setFallbackLocale(string $locale);
 }

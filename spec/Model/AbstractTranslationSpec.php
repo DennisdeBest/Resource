@@ -21,17 +21,17 @@ use Sylius\Component\Resource\Model\TranslationInterface;
 
 final class AbstractTranslationSpec extends ObjectBehavior
 {
-    function let(): void
+    function let()
     {
         $this->beAnInstanceOf('spec\Sylius\Component\Resource\Model\ConcreteTranslation');
     }
 
-    function it_is_a_translation(): void
+    function it_is_a_translation()
     {
         $this->shouldImplement(TranslationInterface::class);
     }
 
-    function its_translatable_is_mutable(TranslatableInterface $translatable): void
+    function its_translatable_is_mutable(TranslatableInterface $translatable)
     {
         $this->setTranslatable($translatable);
         $this->getTranslatable()->shouldReturn($translatable);
@@ -40,7 +40,7 @@ final class AbstractTranslationSpec extends ObjectBehavior
     function its_detaches_from_its_translatable_correctly(
         TranslatableInterface $translatable1,
         TranslatableInterface $translatable2
-    ): void {
+    ) {
         $translatable1->addTranslation(Argument::type(AbstractTranslation::class));
         $this->setTranslatable($translatable1);
 
@@ -49,7 +49,7 @@ final class AbstractTranslationSpec extends ObjectBehavior
         $this->setTranslatable($translatable2);
     }
 
-    function its_locale_is_mutable(): void
+    function its_locale_is_mutable()
     {
         $this->setLocale('en');
         $this->getLocale()->shouldReturn('en');

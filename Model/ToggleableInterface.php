@@ -25,9 +25,9 @@ interface ToggleableInterface
     /**
      * @param bool $enabled
      */
-    public function setEnabled(?bool $enabled): void;
+    public function setEnabled(?bool $enabled);
 
-    public function enable(): void;
+    public function enable();
 
-    public function disable(): void;
+    public function disable();
 }

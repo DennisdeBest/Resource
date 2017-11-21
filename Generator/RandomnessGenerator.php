@@ -40,7 +40,7 @@ final class RandomnessGenerator implements RandomnessGeneratorInterface
     /**
      * {@inheritdoc}
      */
-    public function generateUriSafeString(int $length): string
+    public function generateUriSafeString(int $length)
     {
         return $this->generateStringOfLength($length, $this->uriSafeAlphabet);
     }
@@ -48,7 +48,7 @@ final class RandomnessGenerator implements RandomnessGeneratorInterface
     /**
      * {@inheritdoc}
      */
-    public function generateNumeric(int $length): string
+    public function generateNumeric(int $length)
     {
         return $this->generateStringOfLength($length, $this->digits);
     }
@@ -56,7 +56,7 @@ final class RandomnessGenerator implements RandomnessGeneratorInterface
     /**
      * {@inheritdoc}
      */
-    public function generateInt(int $min, int $max): int
+    public function generateInt(int $min, int $max)
     {
         return random_int($min, $max);
     }
@@ -67,7 +67,7 @@ final class RandomnessGenerator implements RandomnessGeneratorInterface
      *
      * @return string
      */
-    private function generateStringOfLength(int $length, string $alphabet): string
+    private function generateStringOfLength(int $length, string $alphabet)
     {
         $alphabetMaxIndex = strlen($alphabet) - 1;
         $randomString = '';

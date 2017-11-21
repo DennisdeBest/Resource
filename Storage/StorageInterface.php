@@ -20,7 +20,7 @@ interface StorageInterface
      *
      * @return bool
      */
-    public function has(string $name): bool;
+    public function has(string $name);
 
     /**
      * @param string $name
@@ -34,15 +34,15 @@ interface StorageInterface
      * @param string $name
      * @param mixed $value
      */
-    public function set(string $name, $value): void;
+    public function set(string $name, $value);
 
     /**
      * @param string $name
      */
-    public function remove(string $name): void;
+    public function remove(string $name);
 
     /**
      * @return array
      */
-    public function all(): array;
+    public function all();
 }

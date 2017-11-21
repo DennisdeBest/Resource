@@ -23,7 +23,7 @@ trait ToggleableTrait
     /**
      * @return bool
      */
-    public function isEnabled(): bool
+    public function isEnabled()
     {
         return $this->enabled;
     }
@@ -31,17 +31,17 @@ trait ToggleableTrait
     /**
      * @param bool $enabled
      */
-    public function setEnabled(?bool $enabled): void
+    public function setEnabled(?bool $enabled)
     {
         $this->enabled = (bool) $enabled;
     }
 
-    public function enable(): void
+    public function enable()
     {
         $this->enabled = true;
     }
 
-    public function disable(): void
+    public function disable()
     {
         $this->enabled = false;
     }

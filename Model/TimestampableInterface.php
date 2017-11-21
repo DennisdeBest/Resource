@@ -18,7 +18,7 @@ interface TimestampableInterface
     /**
      * @return \DateTimeInterface|null
      */
-    public function getCreatedAt(): ?\DateTimeInterface;
+    public function getCreatedAt();
 
     /**
      * @param \DateTimeInterface|null $createdAt
@@ -28,7 +28,7 @@ interface TimestampableInterface
     /**
      * @return \DateTimeInterface|null
      */
-    public function getUpdatedAt(): ?\DateTimeInterface;
+    public function getUpdatedAt();
 
     /**
      * @param \DateTimeInterface|null $updatedAt

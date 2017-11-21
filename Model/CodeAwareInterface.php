@@ -18,10 +18,10 @@ interface CodeAwareInterface
     /**
      * @return string|null
      */
-    public function getCode(): ?string;
+    public function getCode();
 
     /**
      * @param string|null $code
      */
-    public function setCode(?string $code): void;
+    public function setCode(?string $code);
 }

@@ -17,17 +17,17 @@ use PhpSpec\ObjectBehavior;
 
 final class UnexpectedTypeExceptionSpec extends ObjectBehavior
 {
-    function let(): void
+    function let()
     {
         $this->beConstructedWith('stringValue', '\ExpectedType');
     }
 
-    function it_extends_invalid_argument_exception(): void
+    function it_extends_invalid_argument_exception()
     {
         $this->shouldHaveType(\InvalidArgumentException::class);
     }
 
-    function it_has_a_message(): void
+    function it_has_a_message()
     {
         $this->getMessage()->shouldReturn('Expected argument of type "\ExpectedType", "string" given.');
     }

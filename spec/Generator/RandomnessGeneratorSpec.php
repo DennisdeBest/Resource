@@ -18,12 +18,12 @@ use Sylius\Component\Resource\Generator\RandomnessGeneratorInterface;
 
 final class RandomnessGeneratorSpec extends ObjectBehavior
 {
-    function it_implements_randomness_generator_interface(): void
+    function it_implements_randomness_generator_interface()
     {
         $this->shouldImplement(RandomnessGeneratorInterface::class);
     }
 
-    function it_generates_random_uri_safe_string_of_length(): void
+    function it_generates_random_uri_safe_string_of_length()
     {
         $length = 9;
 
@@ -31,7 +31,7 @@ final class RandomnessGeneratorSpec extends ObjectBehavior
         $this->generateUriSafeString($length)->shouldHaveLength($length);
     }
 
-    function it_generates_random_numeric_string_of_length(): void
+    function it_generates_random_numeric_string_of_length()
     {
         $length = 12;
 
@@ -40,7 +40,7 @@ final class RandomnessGeneratorSpec extends ObjectBehavior
         $this->generateNumeric($length)->shouldHaveLength($length);
     }
 
-    function it_generates_random_int_in_range(): void
+    function it_generates_random_int_in_range()
     {
         $min = 12;
         $max = 2000000;
@@ -52,7 +52,7 @@ final class RandomnessGeneratorSpec extends ObjectBehavior
     /**
      * {@inheritdoc}
      */
-    public function getMatchers(): array
+    public function getMatchers()
     {
         return [
             'haveLength' => function ($subject, $length) {

@@ -23,7 +23,7 @@ final class Registry implements RegistryInterface
     /**
      * {@inheritdoc}
      */
-    public function getAll(): iterable
+    public function getAll()
     {
         return $this->metadata;
     }
@@ -31,7 +31,7 @@ final class Registry implements RegistryInterface
     /**
      * {@inheritdoc}
      */
-    public function get(string $alias): MetadataInterface
+    public function get(string $alias)
     {
         if (!array_key_exists($alias, $this->metadata)) {
             throw new \InvalidArgumentException(sprintf('Resource "%s" does not exist.', $alias));
@@ -43,7 +43,7 @@ final class Registry implements RegistryInterface
     /**
      * {@inheritdoc}
      */
-    public function getByClass(string $className): MetadataInterface
+    public function getByClass(string $className)
     {
         foreach ($this->metadata as $metadata) {
             if ($className === $metadata->getClass('model')) {
@@ -57,7 +57,7 @@ final class Registry implements RegistryInterface
     /**
      * {@inheritdoc}
      */
-    public function add(MetadataInterface $metadata): void
+    public function add(MetadataInterface $metadata)
     {
         $this->metadata[$metadata->getAlias()] = $metadata;
     }
@@ -65,7 +65,7 @@ final class Registry implements RegistryInterface
     /**
      * {@inheritdoc}
      */
-    public function addFromAliasAndConfiguration(string $alias, array $configuration): void
+    public function addFromAliasAndConfiguration(string $alias, array $configuration)
     {
         $this->add(Metadata::fromAliasAndConfiguration($alias, $configuration));
     }

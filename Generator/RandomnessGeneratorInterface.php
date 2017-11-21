@@ -20,14 +20,14 @@ interface RandomnessGeneratorInterface
      *
      * @return string
      */
-    public function generateUriSafeString(int $length): string;
+    public function generateUriSafeString(int $length);
 
     /**
      * @param int $length
      *
      * @return string
      */
-    public function generateNumeric(int $length): string;
+    public function generateNumeric(int $length);
 
     /**
      * @param int $min
@@ -35,5 +35,5 @@ interface RandomnessGeneratorInterface
      *
      * @return int
      */
-    public function generateInt(int $min, int $max): int;
+    public function generateInt(int $min, int $max);
 }

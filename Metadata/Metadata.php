@@ -64,7 +64,7 @@ final class Metadata implements MetadataInterface
      *
      * @return self
      */
-    public static function fromAliasAndConfiguration(string $alias, array $parameters): self
+    public static function fromAliasAndConfiguration(string $alias, array $parameters)
     {
         [$applicationName, $name] = self::parseAlias($alias);
 
@@ -74,7 +74,7 @@ final class Metadata implements MetadataInterface
     /**
      * {@inheritdoc}
      */
-    public function getAlias(): string
+    public function getAlias()
     {
         return $this->applicationName . '.' . $this->name;
     }
@@ -82,7 +82,7 @@ final class Metadata implements MetadataInterface
     /**
      * {@inheritdoc}
      */
-    public function getApplicationName(): string
+    public function getApplicationName()
     {
         return $this->applicationName;
     }
@@ -90,7 +90,7 @@ final class Metadata implements MetadataInterface
     /**
      * {@inheritdoc}
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->name;
     }
@@ -98,7 +98,7 @@ final class Metadata implements MetadataInterface
     /**
      * {@inheritdoc}
      */
-    public function getHumanizedName(): string
+    public function getHumanizedName()
     {
         return strtolower(trim(preg_replace(['/([A-Z])/', '/[_\s]+/'], ['_$1', ' '], $this->name)));
     }
@@ -106,7 +106,7 @@ final class Metadata implements MetadataInterface
     /**
      * {@inheritdoc}
      */
-    public function getPluralName(): string
+    public function getPluralName()
     {
         return Inflector::pluralize($this->name);
     }
@@ -114,7 +114,7 @@ final class Metadata implements MetadataInterface
     /**
      * {@inheritdoc}
      */
-    public function getDriver(): string
+    public function getDriver()
     {
         return $this->driver;
     }
@@ -122,7 +122,7 @@ final class Metadata implements MetadataInterface
     /**
      * {@inheritdoc}
      */
-    public function getTemplatesNamespace(): ?string
+    public function getTemplatesNamespace()
     {
         return $this->templatesNamespace;
     }
@@ -142,7 +142,7 @@ final class Metadata implements MetadataInterface
     /**
      * {@inheritdoc}
      */
-    public function hasParameter(string $name): bool
+    public function hasParameter(string $name)
     {
         return array_key_exists($name, $this->parameters);
     }
@@ -150,7 +150,7 @@ final class Metadata implements MetadataInterface
     /**
      * {@inheritdoc}
      */
-    public function getParameters(): array
+    public function getParameters()
     {
         return $this->parameters;
     }
@@ -158,7 +158,7 @@ final class Metadata implements MetadataInterface
     /**
      * {@inheritdoc}
      */
-    public function getClass(string $name): string
+    public function getClass(string $name)
     {
         if (!$this->hasClass($name)) {
             throw new \InvalidArgumentException(sprintf('Class "%s" is not configured for resource "%s".', $name, $this->getAlias()));
@@ -170,7 +170,7 @@ final class Metadata implements MetadataInterface
     /**
      * {@inheritdoc}
      */
-    public function hasClass(string $name): bool
+    public function hasClass(string $name)
     {
         return isset($this->parameters['classes'][$name]);
     }
@@ -178,7 +178,7 @@ final class Metadata implements MetadataInterface
     /**
      * {@inheritdoc}
      */
-    public function getServiceId(string $serviceName): string
+    public function getServiceId(string $serviceName)
     {
         return sprintf('%s.%s.%s', $this->applicationName, $serviceName, $this->name);
     }
@@ -186,7 +186,7 @@ final class Metadata implements MetadataInterface
     /**
      * {@inheritdoc}
      */
-    public function getPermissionCode(string $permissionName): string
+    public function getPermissionCode(string $permissionName)
     {
         return sprintf('%s.%s.%s', $this->applicationName, $this->name, $permissionName);
     }
@@ -196,7 +196,7 @@ final class Metadata implements MetadataInterface
      *
      * @return array
      */
-    private static function parseAlias(string $alias): array
+    private static function parseAlias(string $alias)
     {
         if (false === strpos($alias, '.')) {
             throw new \InvalidArgumentException(sprintf('Invalid alias "%s" supplied, it should conform to the following format "<applicationName>.<name>".', $alias));

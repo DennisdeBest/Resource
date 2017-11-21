@@ -17,17 +17,17 @@ use PhpSpec\ObjectBehavior;
 
 final class UnsupportedMethodExceptionSpec extends ObjectBehavior
 {
-    function let(): void
+    function let()
     {
         $this->beConstructedWith('methodName');
     }
 
-    function it_extends_exception(): void
+    function it_extends_exception()
     {
         $this->shouldHaveType(\Exception::class);
     }
 
-    function it_has_a_message(): void
+    function it_has_a_message()
     {
         $this->getMessage()->shouldReturn('The method "methodName" is not supported.');
     }

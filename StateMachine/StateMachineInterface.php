@@ -25,7 +25,7 @@ interface StateMachineInterface extends BaseStateMachineInterface
      *
      * @return string|null
      */
-    public function getTransitionFromState(string $fromState): ?string;
+    public function getTransitionFromState(string $fromState);
 
     /**
      * Returns the possible transition to the given state
@@ -35,5 +35,5 @@ interface StateMachineInterface extends BaseStateMachineInterface
      *
      * @return string|null
      */
-    public function getTransitionToState(string $toState): ?string;
+    public function getTransitionToState(string $toState);
 }

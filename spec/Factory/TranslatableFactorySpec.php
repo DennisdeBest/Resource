@@ -22,17 +22,17 @@ use Sylius\Component\Resource\Translation\Provider\TranslationLocaleProviderInte
 
 final class TranslatableFactorySpec extends ObjectBehavior
 {
-    function let(FactoryInterface $factory, TranslationLocaleProviderInterface $localeProvider): void
+    function let(FactoryInterface $factory, TranslationLocaleProviderInterface $localeProvider)
     {
         $this->beConstructedWith($factory, $localeProvider);
     }
 
-    function it_implements_translatable_factory_interface(): void
+    function it_implements_translatable_factory_interface()
     {
         $this->shouldImplement(TranslatableFactoryInterface::class);
     }
 
-    function it_throws_an_exception_if_resource_is_not_translatable(FactoryInterface $factory, \stdClass $resource): void
+    function it_throws_an_exception_if_resource_is_not_translatable(FactoryInterface $factory, \stdClass $resource)
     {
         $factory->createNew()->willReturn($resource);
 
@@ -46,7 +46,7 @@ final class TranslatableFactorySpec extends ObjectBehavior
         FactoryInterface $factory,
         TranslationLocaleProviderInterface $localeProvider,
         TranslatableInterface $resource
-    ): void {
+    ) {
         $localeProvider->getDefaultLocaleCode()->willReturn('pl_PL');
 
         $factory->createNew()->willReturn($resource);

@@ -18,10 +18,10 @@ interface SlugAwareInterface
     /**
      * @return string|null
      */
-    public function getSlug(): ?string;
+    public function getSlug();
 
     /**
      * @param string|null $slug
      */
-    public function setSlug(?string $slug): void;
+    public function setSlug(?string $slug);
 }
